@@ -1,0 +1,27 @@
+{
+  "name": "gitpacker",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "gitpacker": "./bin/gitpacker.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindomZ/gitpacker.js.git"
+  },
+  "keywords": [
+    "git",
+    "packer",
+    "package"
+  ],
+  "author": "WindomZ",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/WindomZ/gitpacker.js/issues"
+  },
+  "homepage": "https://github.com/WindomZ/gitpacker.js#readme"
+}
