@@ -1,0 +1,17 @@
+{
+  "dirs": {
+    "matching": [
+      "node_modules"
+    ],
+    "regular": [
+      "^\\..+$"
+    ]
+  },
+  "files": {
+    "matching": [
+    ],
+    "regular": [
+      "^\\..+$"
+    ]
+  }
+}
