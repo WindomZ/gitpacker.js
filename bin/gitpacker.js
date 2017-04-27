@@ -10,30 +10,50 @@ const program = require('commander')
 
 const pkg = require('../package.json')
 
+const compress = require('../lib/gitpacker')
+const {toArray} = require('../lib/utils')
+
 let noArgs = true
 
 program
   .version(pkg.version)
   .description('Compress files based on git ignore.')
-  .option('-i, --include <file...>', 'include files', null, null)
-  .option('-e, --exclude <file...>', 'exclude files', null, null)
+  .option('-i, --include <files ...>', 'include files', /[\w,]+/i, null)
+  .option('-e, --exclude <files ...>', 'exclude files', /[\w,]+/i, null)
+  .option('--debug', 'debug mode, such as print error tracks', null, null)
 
 program
-  .command('zip <file>')
-  .action((file, options) => {
+  .command('zip <file> [dir]')
+  .action((file, dir, options) => {
     noArgs = false
-    console.log('zip >>> file: %s', file)
-    console.log('zip >>> include: %s', options.parent.include)
-    console.log('zip >>> exclude: %s', options.parent.exclude)
+
+    // console.log('zip >>> file: %j', file)
+    // console.log('zip >>> dir: %j', dir)
+    // console.log('zip >>> include: %j', options.parent.include)
+    // console.log('zip >>> exclude: %j', options.parent.exclude)
+
+    compress('zip', dir, file,
+      toArray(options.parent.include), toArray(options.parent.exclude))
+      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+        item.value + '\n'))
+      .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 
 program
-  .command('tar <file>')
-  .action((file, options) => {
+  .command('tar <file> [dir]')
+  .action((file, dir, options) => {
     noArgs = false
-    console.log('tar >>> file: %s', file)
-    console.log('tar >>> include: %s', options.parent.include)
-    console.log('tar >>> exclude: %s', options.parent.exclude)
+
+    // console.log('tar >>> file: %j', file)
+    // console.log('tar >>> dir: %j', dir)
+    // console.log('tar >>> include: %j', options.parent.include)
+    // console.log('tar >>> exclude: %j', options.parent.exclude)
+
+    compress('tar', dir, file,
+      toArray(options.parent.include), toArray(options.parent.exclude))
+      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+        item.value + '\n'))
+      .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 
 program.parse(process.argv)
