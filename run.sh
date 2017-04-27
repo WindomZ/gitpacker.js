@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./bin/gitpacker.js zip test ./ -i asset -e lib,bin
+./bin/gitpacker.js zip test.zip -i asset -e lib,bin

@@ -22,32 +22,32 @@ program
   .option('-e, --exclude <files ...>', 'exclude files', /[\w,]+/i, null)
 
 program
-  .command('zip <file> [dirs...]')
-  .action((file, dirs, options) => {
+  .command('zip <file> [dir]')
+  .action((file, dir, options) => {
     noArgs = false
 
     console.log('zip >>> file: %j', file)
-    console.log('zip >>> dirs: %j', dirs)
+    console.log('zip >>> dir: %j', dir)
     console.log('zip >>> include: %j', options.parent.include)
     console.log('zip >>> exclude: %j', options.parent.exclude)
 
-    compress('zip', file, toArray(dirs),
+    compress('zip', dir, file,
       toArray(options.parent.include), toArray(options.parent.exclude))
       .then(item => console.log('zip >>> then: %j', item))
       .catch(e => console.error('zip >>> catch: %j', e))
   })
 
 program
-  .command('tar <file> [dirs...]')
-  .action((file, dirs, options) => {
+  .command('tar <file> [dir]')
+  .action((file, dir, options) => {
     noArgs = false
 
     console.log('tar >>> file: %j', file)
-    console.log('tar >>> dirs: %j', dirs)
+    console.log('tar >>> dir: %j', dir)
     console.log('tar >>> include: %j', options.parent.include)
     console.log('tar >>> exclude: %j', options.parent.exclude)
 
-    compress('tar', file, toArray(dirs),
+    compress('tar', dir, file,
       toArray(options.parent.include), toArray(options.parent.exclude))
       .then(item => console.log('tar >>> then: %j', item))
       .catch(e => console.error('tar >>> catch: %j', e))
