@@ -34,8 +34,8 @@ program
 
     compress('zip', dir, file,
       toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => process.stdout.write('\nFinish! Package compression saved to '
-        + item.value + '\n'))
+      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+        item.value + '\n'))
       .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 
@@ -51,8 +51,8 @@ program
 
     compress('tar', dir, file,
       toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => process.stdout.write('\nFinish! Package compression saved to '
-        + item.value + '\n'))
+      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+        item.value + '\n'))
       .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 
