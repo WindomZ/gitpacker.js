@@ -18,23 +18,23 @@ let noArgs = true
 program
   .version(pkg.version)
   .description('Compress files based on git ignore.')
-  .option('-i, --include <files ...>', 'include files', null, null)
-  .option('-e, --exclude <files ...>', 'exclude files', null, null)
+  .option('-i, --include <files ...>', 'include files', /[\w,]+/i, null)
+  .option('-e, --exclude <files ...>', 'exclude files', /[\w,]+/i, null)
 
 program
   .command('zip <file> [dirs...]')
   .action((file, dirs, options) => {
     noArgs = false
 
-    console.log('zip >>> file: %s', file)
-    console.log('zip >>> dirs: %s', dirs)
-    console.log('zip >>> include: %s', options.parent.include)
-    console.log('zip >>> exclude: %s', options.parent.exclude)
+    console.log('zip >>> file: %j', file)
+    console.log('zip >>> dirs: %j', dirs)
+    console.log('zip >>> include: %j', options.parent.include)
+    console.log('zip >>> exclude: %j', options.parent.exclude)
 
     compress('zip', file, toArray(dirs),
       toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => console.log('then: ', item))
-      .catch(e => console.error('catch: ', e))
+      .then(item => console.log('zip >>> then: %j', item))
+      .catch(e => console.error('zip >>> catch: %j', e))
   })
 
 program
@@ -42,15 +42,15 @@ program
   .action((file, dirs, options) => {
     noArgs = false
 
-    console.log('tar >>> file: %s', file)
-    console.log('tar >>> dirs: %s', dirs)
-    console.log('tar >>> include: %s', options.parent.include)
-    console.log('tar >>> exclude: %s', options.parent.exclude)
+    console.log('tar >>> file: %j', file)
+    console.log('tar >>> dirs: %j', dirs)
+    console.log('tar >>> include: %j', options.parent.include)
+    console.log('tar >>> exclude: %j', options.parent.exclude)
 
     compress('tar', file, toArray(dirs),
       toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => console.log('then: ', item))
-      .catch(e => console.error('catch: ', e))
+      .then(item => console.log('tar >>> then: %j', item))
+      .catch(e => console.error('tar >>> catch: %j', e))
   })
 
 program.parse(process.argv)
