@@ -9,6 +9,7 @@
   },
   "files": {
     "matching": [
+      ".gitignore"
     ],
     "regular": [
       "^\\..+$"
