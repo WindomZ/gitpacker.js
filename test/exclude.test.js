@@ -5,7 +5,7 @@ const test = require('ava')
 
 const exclude = require('../lib/exclude')
 
-test.serial('exclude pass', t => {
+test('exclude pass', t => {
   t.true(exclude('node_modules', true))
   t.false(exclude('node_modules', false))
 
@@ -18,4 +18,8 @@ test.serial('exclude pass', t => {
   t.true(exclude('.xxx', false))
   t.false(exclude('xxx', true))
   t.false(exclude('xxx', false))
+
+  t.false(exclude(undefined, true))
+  t.false(exclude(undefined, undefined))
+  t.false(exclude(null, null))
 })
