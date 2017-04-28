@@ -10,7 +10,7 @@ const program = require('commander')
 
 const pkg = require('../package.json')
 
-const compress = require('../lib/gitpacker')
+const compress = require('../lib/compress')
 const {toArray} = require('../lib/utils')
 
 let noArgs = true
