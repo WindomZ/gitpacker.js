@@ -11,7 +11,11 @@ test.serial('exclude pass', t => {
 
   t.true(exclude('.gitignore', true))
   t.true(exclude('.gitignore', false))
+  t.false(exclude('gitignore', true))
+  t.false(exclude('gitignore', false))
 
   t.true(exclude('.xxx', true))
   t.true(exclude('.xxx', false))
+  t.false(exclude('xxx', true))
+  t.false(exclude('xxx', false))
 })
