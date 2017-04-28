@@ -10,7 +10,7 @@ const program = require('commander')
 
 const pkg = require('../package.json')
 
-const compress = require('../lib/gitpacker')
+const gitpack = require('../lib/gitpack')
 const {toArray} = require('../lib/utils')
 
 let noArgs = true
@@ -32,10 +32,14 @@ program
     // console.log('zip >>> include: %j', options.parent.include)
     // console.log('zip >>> exclude: %j', options.parent.exclude)
 
-    compress('zip', dir, file,
-      toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
-        item.value + '\n'))
+    gitpack({
+      method: 'zip',
+      dir: dir,
+      file: file,
+      include: toArray(options.parent.include),
+      exclude: toArray(options.parent.exclude)
+    }).then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+      item.value + '\n'))
       .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 
@@ -49,10 +53,14 @@ program
     // console.log('tar >>> include: %j', options.parent.include)
     // console.log('tar >>> exclude: %j', options.parent.exclude)
 
-    compress('tar', dir, file,
-      toArray(options.parent.include), toArray(options.parent.exclude))
-      .then(item => process.stdout.write('\nFinish! Package compression saved to ' +
-        item.value + '\n'))
+    gitpack({
+      method: 'tar',
+      dir: dir,
+      file: file,
+      include: toArray(options.parent.include),
+      exclude: toArray(options.parent.exclude)
+    }).then(item => process.stdout.write('\nFinish! Package compression saved to ' +
+      item.value + '\n'))
       .catch(e => process.stderr.write(options.parent.debug ? e : e.message) + '\n')
   })
 

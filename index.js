@@ -3,6 +3,6 @@
  */
 'use strict'
 
-const compress = require('./lib/gitpacker')
+const compress = require('./lib/compress')
 
 module.exports = compress

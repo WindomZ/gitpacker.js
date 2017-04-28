@@ -4,23 +4,32 @@
 [![Build Status](https://travis-ci.org/WindomZ/gitpacker.js.svg?branch=master)](https://travis-ci.org/WindomZ/gitpacker.js)
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Dependency](https://david-dm.org/WindomZ/gitpacker.js.svg)](https://david-dm.org/WindomZ/gitpacker.js)
+[![Coverage Status](https://coveralls.io/repos/github/WindomZ/gitpacker.js/badge.svg?branch=dev)](https://coveralls.io/github/WindomZ/gitpacker.js?branch=dev)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 
-> A tool to quickly pack and compress git repository.
+> A tool to quickly pack and compress the pure git repository.
 
-[![gitpacker.js](https://img.shields.io/npm/v/gitpacker.js.svg)](https://www.npmjs.com/package/gitpacker.js)
+[![gitpacker](https://img.shields.io/npm/v/gitpacker.svg)](https://www.npmjs.com/package/gitpacker)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
 
 ## Installation
 
+### CLI executable
+
 ```bash
-npm install -g gitpacker.js
+npm install -g gitpacker
 ```
 
-## Usage
+### API install
 
 ```bash
-$ gitpacker.js -h
+npm install --save gitpacker
+```
+
+## CLI Usage
+
+```bash
+$ gitpacker -h
 
   Usage: gitpacker [options] [command]
 
@@ -40,6 +49,21 @@ $ gitpacker.js -h
     -e, --exclude <files ...>  exclude files
     --debug                    debug mode, such as print error tracks
 ```
+
+## API Usage
+
+```javascript
+const compress = require('gitpacker')
+```
+
+### compress (string, string, string, Array, Array)
+
+**Compress files to zip or tar.**
+- The first string sets method, e.g. 'zip' or 'tar', 
+- The second string sets working directory, 
+- The third string sets compress file name, 
+- The first Array sets include files, 
+- The second Array sets exclude files.
 
 ## License
 
