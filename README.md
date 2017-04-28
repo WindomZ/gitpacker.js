@@ -1,4 +1,4 @@
-# gitpacker.js
+# compress.js
 [![Build Status](https://travis-ci.org/WindomZ/gitpacker.js.svg?branch=master)](https://travis-ci.org/WindomZ/gitpacker.js)
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Dependency](https://david-dm.org/WindomZ/gitpacker.js.svg)](https://david-dm.org/WindomZ/gitpacker.js)
@@ -6,19 +6,19 @@
 
 > A tool to quickly pack and compress git repository.
 
-[![gitpacker.js](https://img.shields.io/npm/v/gitpacker.js.svg)](https://www.npmjs.com/package/gitpacker.js)
+[![compress.js](https://img.shields.io/npm/v/gitpacker.svg)](https://www.npmjs.com/package/gitpacker)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
 
 ## Installation
 
 ```bash
-npm install -g gitpacker.js
+npm install -g gitpacker
 ```
 
 ## Usage
 
 ```bash
-$ gitpacker.js -h
+$ compress.js -h
 
   Usage: gitpacker [options] [command]
 
