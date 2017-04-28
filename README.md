@@ -9,6 +9,8 @@
 
 > A tool to quickly pack and compress the pure git repository.
 
+[![NPM](https://nodei.co/npm/gitpacker.png?compact=true)](https://nodei.co/npm/gitpacker/)
+
 [![gitpacker](https://img.shields.io/npm/v/gitpacker.svg)](https://www.npmjs.com/package/gitpacker)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
 
