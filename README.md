@@ -73,13 +73,13 @@ const compress = require('gitpacker')
 
 ### CLI Example
 
-For example, in the current project directory, want to 'gitpacker' and exclude all .sh files: 
+For example, in the current project directory, want to `gitpacker` and exclude all .sh files: 
 
 ```bash
-$ gitpacker zip xxx.zip . -e *.sh
+$ gitpacker zip xxx.zip . -e '*.sh'
 ```
 
-or want to 'gitpacker' `./lib`: 
+or want to `gitpacker` the `./lib` directory: 
 
 ```bash
 $ gitpacker zip xxx.zip lib
