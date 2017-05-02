@@ -26,8 +26,8 @@ function appender (xs) {
 program
   .version(pkg.version)
   .description('Compress files based on git ignore.')
-  .option('-i, --include <files ..>', 'include files', appender(), [])
-  .option('-e, --exclude <files ..>', 'exclude files', appender(), [])
+  .option('-i, --include <file>', 'include file', appender(), [])
+  .option('-e, --exclude <file>', 'exclude file', appender(), [])
   .option('--debug', 'debug mode, such as print error tracks', null, null)
 
 program
