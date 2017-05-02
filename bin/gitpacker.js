@@ -18,8 +18,8 @@ let noArgs = true
 program
   .version(pkg.version)
   .description('Compress files based on git ignore.')
-  .option('-i, --include <files ...>', 'include files', /[\w,]+/i, null)
-  .option('-e, --exclude <files ...>', 'exclude files', /[\w,]+/i, null)
+  .option('-i, --include <files ...>', 'include files', /[^:<>|"?\r\n]+/i, null)
+  .option('-e, --exclude <files ...>', 'exclude files', /[^:<>|"?\r\n]+/i, null)
   .option('--debug', 'debug mode, such as print error tracks', null, null)
 
 program
