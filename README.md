@@ -47,11 +47,11 @@ $ gitpacker -h
 
   Options:
 
-    -h, --help                 output usage information
-    -V, --version              output the version number
-    -i, --include <files ...>  include files
-    -e, --exclude <files ...>  exclude files
-    --debug                    debug mode, such as print error tracks
+    -h, --help            output usage information
+    -V, --version         output the version number
+    -i, --include <file>  include file
+    -e, --exclude <file>  exclude file
+    --debug               debug mode, such as print error tracks
 ```
 
 ### API Usage
@@ -73,10 +73,10 @@ const compress = require('gitpacker')
 
 ### CLI Example
 
-For example, in the current project directory, want to `gitpacker` and exclude all .sh files: 
+For example, in the current project directory, want to `gitpacker` and exclude all `.sh` and `.md` files: 
 
 ```bash
-$ gitpacker zip xxx.zip . -e '*.sh'
+$ gitpacker zip xxx.zip . -e '*.sh' -e '*.md'
 ```
 
 or want to `gitpacker` the `./lib` directory: 
