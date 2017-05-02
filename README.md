@@ -79,7 +79,7 @@ For example, in the current project directory, want to 'gitpacker' and exclude a
 $ gitpacker zip xxx.zip . -e *.sh
 ```
 
-Want to 'gitpacker' `./lib`: 
+or want to 'gitpacker' `./lib`: 
 
 ```bash
 $ gitpacker zip xxx.zip lib
