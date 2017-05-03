@@ -15,11 +15,19 @@ const {toArray} = require('../lib/utils')
 
 let noArgs = true
 
+function appender (xs) {
+  xs = xs || []
+  return function (x) {
+    if (x && x.match(/[^:<>|"?\r\n]+/i)) xs.push(x)
+    return xs
+  }
+}
+
 program
   .version(pkg.version)
   .description('Compress files based on git ignore.')
-  .option('-i, --include <files ...>', 'include files', /[\w,]+/i, null)
-  .option('-e, --exclude <files ...>', 'exclude files', /[\w,]+/i, null)
+  .option('-i, --include <file>', 'include file', appender(), [])
+  .option('-e, --exclude <file>', 'exclude file', appender(), [])
   .option('--debug', 'debug mode, such as print error tracks', null, null)
 
 program

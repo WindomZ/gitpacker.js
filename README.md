@@ -9,7 +9,7 @@
 
 > A tool to quickly pack and compress the pure git repository.
 
-[![NPM](https://nodei.co/npm/gitpacker.png?compact=true)](https://nodei.co/npm/gitpacker/)
+[![NPM](https://nodei.co/npm/gitpacker.png)](https://nodei.co/npm/gitpacker/)
 
 [![gitpacker](https://img.shields.io/npm/v/gitpacker.svg)](https://www.npmjs.com/package/gitpacker)
 ![status](https://img.shields.io/badge/status-stable-green.svg)
@@ -28,7 +28,9 @@ npm install -g gitpacker
 npm install --save gitpacker
 ```
 
-## CLI Usage
+## Usage
+
+### CLI Usage
 
 ```bash
 $ gitpacker -h
@@ -45,20 +47,20 @@ $ gitpacker -h
 
   Options:
 
-    -h, --help                 output usage information
-    -V, --version              output the version number
-    -i, --include <files ...>  include files
-    -e, --exclude <files ...>  exclude files
-    --debug                    debug mode, such as print error tracks
+    -h, --help            output usage information
+    -V, --version         output the version number
+    -i, --include <file>  include file
+    -e, --exclude <file>  exclude file
+    --debug               debug mode, such as print error tracks
 ```
 
-## API Usage
+### API Usage
 
 ```javascript
 const compress = require('gitpacker')
 ```
 
-### compress (string, string, string, Array, Array)
+#### compress (string, string, string, Array, Array)
 
 **Compress files to zip or tar.**
 - The first string sets method, e.g. 'zip' or 'tar', 
@@ -66,6 +68,22 @@ const compress = require('gitpacker')
 - The third string sets compress file name, 
 - The first Array sets include files, 
 - The second Array sets exclude files.
+
+## Example
+
+### CLI Example
+
+For example, in the current project directory, want to `gitpacker` and exclude all `.sh` and `.md` files: 
+
+```bash
+$ gitpacker zip xxx.zip . -e '*.sh' -e '*.md'
+```
+
+or want to `gitpacker` the `./lib` directory: 
+
+```bash
+$ gitpacker zip xxx.zip lib
+```
 
 ## License
 
