@@ -60,14 +60,15 @@ $ gitpacker -h
 const compress = require('gitpacker')
 ```
 
-#### compress (string, string, string, Array, Array)
+#### compress (method:string, directory:string, compress:string, includes:Array, excludes:Array)
 
 **Compress files to zip or tar.**
-- The first string sets method, e.g. 'zip' or 'tar', 
-- The second string sets working directory, 
-- The third string sets compress file name, 
-- The first Array sets include files, 
-- The second Array sets exclude files.
+
+- compress method, e.g. 'zip' or 'tar', 
+- working directory, 
+- compress file name, 
+- include files, 
+- exclude files.
 
 ## Example
 
