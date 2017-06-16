@@ -2,10 +2,10 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/WindomZ/gitpacker.js.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/WindomZ/gitpacker.js.svg?branch=master)](https://travis-ci.org/WindomZ/gitpacker.js)
-[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
-[![Dependency](https://david-dm.org/WindomZ/gitpacker.js.svg)](https://david-dm.org/WindomZ/gitpacker.js)
 [![Coverage Status](https://coveralls.io/repos/github/WindomZ/gitpacker.js/badge.svg?branch=dev)](https://coveralls.io/github/WindomZ/gitpacker.js?branch=dev)
+[![Dependency](https://david-dm.org/WindomZ/gitpacker.js.svg)](https://david-dm.org/WindomZ/gitpacker.js)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![License](https://img.shields.io/badge/license-Apache-green.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 > A tool to quickly pack and compress the pure git repository.
 
@@ -77,13 +77,13 @@ const compress = require('gitpacker')
 For example, in the current project directory, want to `gitpacker` and exclude all `.sh` and `.md` files: 
 
 ```bash
-$ gitpacker zip xxx.zip . -e '*.sh' -e '*.md'
+gitpacker zip xxx.zip . -e '*.sh' -e '*.md'
 ```
 
 or want to `gitpacker` the `./lib` directory: 
 
 ```bash
-$ gitpacker zip xxx.zip lib
+gitpacker zip xxx.zip lib
 ```
 
 ## License
