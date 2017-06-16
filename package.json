@@ -1,6 +1,6 @@
 {
   "name": "gitpacker",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A tool to quickly pack and compress git repository.",
   "preferGlobal": true,
   "main": "index.js",
@@ -8,7 +8,7 @@
     "gitpacker": "./bin/gitpacker.js"
   },
   "engines": {
-    "node": ">= 0.6.x"
+    "node": ">=6"
   },
   "scripts": {
     "test": "standard && nyc --reporter=lcov --reporter=text-lcov ava",
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/WindomZ/gitpacker.js#readme",
   "dependencies": {
     "commander": "^2.9.0",
-    "shelljs": "^0.7.7"
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {
     "ava": "^0.19.1",
