@@ -4,11 +4,7 @@
  */
 'use strict'
 
-const process = require('process')
-
 const program = require('commander')
-
-const pkg = require('../package.json')
 
 const gitpack = require('../lib/gitpack')
 const {toArray} = require('../lib/utils')
@@ -24,7 +20,7 @@ function appender (xs) {
 }
 
 program
-  .version(pkg.version)
+  .version(require('../package.json').version)
   .description('Compress files based on git ignore.')
   .option('-i, --include <file>', 'include file', appender(), [])
   .option('-e, --exclude <file>', 'exclude file', appender(), [])

@@ -1,6 +1,6 @@
 {
   "name": "gitpacker",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "A tool to quickly pack and compress git repository.",
   "preferGlobal": true,
   "main": "index.js",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "ava": "^0.19.1",
-    "coveralls": "^2.13.0",
+    "coveralls": "^2.13.1",
     "nyc": "^11.0.0",
     "standard": "*"
   }
