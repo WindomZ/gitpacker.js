@@ -6,3 +6,5 @@
 const compress = require('./lib/compress')
 
 module.exports = compress
+
+module.exports.promise = compress.promise
