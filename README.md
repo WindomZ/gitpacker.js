@@ -12,7 +12,7 @@
 [![NPM](https://nodei.co/npm/gitpacker.png)](https://nodei.co/npm/gitpacker/)
 
 [![gitpacker](https://img.shields.io/npm/v/gitpacker.svg)](https://www.npmjs.com/package/gitpacker)
-![status](https://img.shields.io/badge/status-stable-green.svg)
+[![status](https://img.shields.io/badge/status-stable-green.svg)](https://www.npmjs.com/package/gitpacker)
 
 ## Installation
 
@@ -62,13 +62,17 @@ const compress = require('gitpacker')
 
 #### compress (method:string, directory:string, compress:string, includes:Array, excludes:Array)
 
-**Compress files to zip or tar.**
+> Compress files to zip or tar.
 
 - compress method, e.g. 'zip' or 'tar', 
 - working directory, 
 - compress file name, 
 - include files, 
 - exclude files.
+
+#### compress.promise (method:string, directory:string, compress:string, includes:Array, excludes:Array)
+
+> Ibid, but a Promise function.
 
 ## Example
 
