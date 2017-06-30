@@ -6,7 +6,7 @@
 [![Dependency](https://david-dm.org/WindomZ/gitpacker.js.svg?style=flat-square)](https://david-dm.org/WindomZ/gitpacker.js)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/)
 [![Minimum Node.js Version](https://img.shields.io/badge/node-%3E%3D6-blue.svg?style=flat-square)](https://nodejs.org)
-[![License](https://img.shields.io/badge/license-Apache-green.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
+<!--[![License](https://img.shields.io/badge/license-Apache-green.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)-->
 
 > A tool to quickly pack and compress the pure git repository.
 
@@ -15,7 +15,13 @@
 [![gitpacker](https://img.shields.io/npm/v/gitpacker.svg?style=flat-square)](https://www.npmjs.com/package/gitpacker)
 [![status](https://img.shields.io/badge/status-stable-green.svg?style=flat-square)](https://www.npmjs.com/package/gitpacker)
 
-## Installation
+## Features
+
+- [x] _Automatically_ load `.gitignore` files and excludes files inside it.
+- [x] _Customize_ include files and exclude files as you need.
+- [x] _Include_ files with higher priority than _exclude_ files, automatically retrieved and adapted.
+
+## Install
 
 ### CLI executable
 
@@ -63,17 +69,17 @@ const compress = require('gitpacker')
 
 #### compress (method:string, directory:string, compress:string, includes:Array, excludes:Array)
 
-> Compress files to zip or tar.
+> Compress files with zip or tar.
 
-- compress method, e.g. 'zip' or 'tar', 
-- working directory, 
-- compress file name, 
-- include files, 
-- exclude files.
+- compress method, 'zip' or 'tar'.
+- working directory, default is `.`.
+- compress file name, you want to get the compressed file name.
+- include files, you want to pack the files.
+- exclude files, you don't want to pack the files.
 
 #### compress.promise (method:string, directory:string, compress:string, includes:Array, excludes:Array)
 
-> Ibid, but a Promise function.
+> Ibid, a promise function.
 
 ## Example
 
@@ -82,15 +88,19 @@ const compress = require('gitpacker')
 For example, in the current project directory, want to `gitpacker` and exclude all `.sh` and `.md` files: 
 
 ```bash
-gitpacker zip xxx.zip . -e '*.sh' -e '*.md'
+gitpacker zip name.zip . -e '*.sh' -e '*.md'
 ```
 
-or want to `gitpacker` the `./lib` directory: 
+Or only want to `gitpacker` the all `.js`files in `./lib` directory: 
 
 ```bash
-gitpacker zip xxx.zip lib
+gitpacker zip name.zip lib -i '*.js'
 ```
 
-## License
+## Support
 
-The [Apache License 2.0](https://github.com/WindomZ/gitpacker.js/blob/master/LICENSE)
+Welcome your **Star**, make pull requests, report bugs, suggest ideas and discuss **gitpacker.js**.
+
+I would love to hear what you think about **gitpacker.js** on [issues page](https://github.com/WindomZ/gitpacker.js/issues).
+
+Your support is my unremitting power.
