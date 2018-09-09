@@ -7,7 +7,7 @@
 const program = require('commander')
 
 const gitpack = require('../lib/gitpack')
-const {toArray} = require('../lib/utils')
+const { toArray } = require('../lib/utils')
 
 let noArgs = true
 
