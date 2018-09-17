@@ -3,7 +3,7 @@
  */
 const test = require('ava')
 
-const {include, addIncludes, exclude, addExcludes} = require('../lib/filter')
+const { include, addIncludes, exclude, addExcludes } = require('../lib/filter')
 
 test('filter pass', t => {
   addIncludes()

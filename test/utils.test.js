@@ -3,7 +3,7 @@
  */
 const test = require('ava')
 
-const {toArray} = require('../lib/utils')
+const { toArray } = require('../lib/utils')
 
 test('toArray pass', t => {
   let arr1 = toArray('node_modules')

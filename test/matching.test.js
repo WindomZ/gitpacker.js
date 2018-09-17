@@ -3,7 +3,7 @@
  */
 const test = require('ava')
 
-const {matchingString, matchingRegular} = require('../lib/matching')
+const { matchingString, matchingRegular } = require('../lib/matching')
 
 test('matching pass', t => {
   t.true(matchingString('node_modules', ['node_modules']))
